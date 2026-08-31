@@ -231,7 +231,8 @@
             const data = {};
             formData.forEach((value, key) => data[key] = value);
 
-            fetch('https://formspree.io', {
+            // هنا تم دمج رابطك الصحيح والدقيق والمعدل بالكامل بالـ a وليس الـ o
+            fetch('https://formspree.io/f/mbgjdnla', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
