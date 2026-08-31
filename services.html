@@ -203,6 +203,11 @@
                     <label>الاسم الكريم</label>
                     <input type="text" name="name" id="name" placeholder="اكتب اسمك هنا" required>
                 </div>
+                <!-- الخانة الجديدة المضافة بدقة لجمع بريد العميل الإلكتروني -->
+                <div class="form-group">
+                    <label>بريدك الإلكتروني</label>
+                    <input type="email" name="email" id="email" placeholder="name@example.com" required>
+                </div>
                 <div class="form-group">
                     <label>نوع مشروعك</label>
                     <input type="text" name="business_type" id="business_type" placeholder="مثال: متجر إلكتروني، شركة ناشئة..." required>
@@ -231,8 +236,7 @@
             const data = {};
             formData.forEach((value, key) => data[key] = value);
 
-            // هنا تم دمج رابطك الصحيح والدقيق والمعدل بالكامل بالـ a وليس الـ o
-            fetch('https://formspree.io/f/mbgjdnla', {
+            fetch('https://formspree.io', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
