@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOSHAE - خدماتنا</title>
+    <title>JOSHAE - خدماتنا وأسعارنا</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -11,6 +11,8 @@
             --text-main: #1f2937;
             --text-muted: #4b5563;
             --bg-light: #f9fafb;
+            --success: #10b981;
+            --warning: #f59e0b;
         }
 
         * {
@@ -66,24 +68,51 @@
             color: var(--text-main);
         }
 
-        .services-grid {
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 5rem 0 2rem 0;
+            color: var(--text-main);
+        }
+
+        .services-grid, .pricing-grid, .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-bottom: 4rem;
         }
 
-        .service-card {
+        .service-card, .price-card, .review-card {
             background: white;
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             border: 1px solid #e5e7eb;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .service-card:hover {
+        .service-card:hover, .price-card:hover, .review-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .price-card.featured::before {
+            content: 'عرض الافتتاح';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 20px;
         }
 
         .service-icon {
@@ -91,25 +120,96 @@
             margin-bottom: 1rem;
         }
 
-        .service-card h3 {
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-main);
         }
 
-        .service-card p {
+        .card-p {
             color: var(--text-muted);
             line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .features-list li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .stars {
+            color: var(--warning);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 1rem;
+        }
+
+        .client-avatar {
+            width: 40px;
+            height: 40px;
+            background: #e0e7ff;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .client-details h4 {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .client-details span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
         .contact-section {
             background: white;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 5rem auto 2rem auto;
             padding: 2.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             border: 1px solid #e5e7eb;
-            position: relative;
         }
 
         .contact-section h2 {
@@ -153,16 +253,6 @@
         .submit-btn:hover {
             background: var(--primary-dark);
         }
-        .success-message {
-            display: none;
-            background: #d1fae5;
-            color: #065f46;
-            padding: 1rem;
-            border-radius: 6px;
-            text-align: center;
-            font-weight: 600;
-            margin-top: 1rem;
-        }
     </style>
 </head>
 <body>
@@ -175,91 +265,69 @@
     <div class="container">
         <h1 class="page-title">ماذا نقدم في JOSHAE؟</h1>
 
+        <!-- 1️⃣ قسم الخدمات الرئيسي -->
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">📂</div>
-                <h3>هيكلة الملفات</h3>
-                <p>بناء نظام مجلدات مخصص ومدروس يناسب طبيعة عمل مشروعك لضمان عدم ضياع أي مستند.</p>
+                <div class="card-title">هيكلة الملفات</div>
+                <p class="card-p">بناء نظام مجلدات مخصص ومدروس يناسب طبيعة عمل مشروعك لضمان عدم ضياع أي مستند.</p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">⚡</div>
-                <h3>الوصول السريع</h3>
-                <p>إعداد فهارس رقمية ذكية تمكنك أنت وفريقك من الوصول لأي ملف خلال ثوانٍ معدودة.</p>
+                <div class="card-title">الوصول السريع</div>
+                <p class="card-p">إعداد فهارس رقمية ذكية تمكنك أنت وفريقك من الوصول لأي ملف خلال ثوانٍ معدودة.</p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">🔒</div>
-                <h3>أرشفة آمنة</h3>
-                <p>ترتيب وحفظ ملفاتك السحابية بشكل يضمن الأمان التام وسهولة مشاركة الصلاحيات.</p>
+                <div class="card-title">أرشفة آمنة</div>
+                <p class="card-p">ترتيب وحفظ ملفاتك السحابية بشكل يضمن الأمان التام وسهولة مشاركة الصلاحيات.</p>
             </div>
         </div>
 
-        <div class="contact-section">
-            <h2>اطلب تنظيم مشروعك الآن</h2>
-            
-            <form id="joshaeForm">
-                <div class="form-group">
-                    <label>الاسم الكريم</label>
-                    <input type="text" name="name" id="name" placeholder="اكتب اسمك هنا" required>
-                </div>
-                <!-- الخانة الجديدة المضافة بدقة لجمع بريد العميل الإلكتروني -->
-                <div class="form-group">
-                    <label>بريدك الإلكتروني</label>
-                    <input type="email" name="email" id="email" placeholder="name@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label>نوع مشروعك</label>
-                    <input type="text" name="business_type" id="business_type" placeholder="مثال: متجر إلكتروني، شركة ناشئة..." required>
-                </div>
-                <div class="form-group">
-                    <label>تفاصيل إضافية</label>
-                    <textarea name="details" id="details" rows="4" placeholder="كيف يمكننا مساعدتك في تنظيم ملفاتك؟"></textarea>
-                </div>
-                <button type="submit" id="submitBtn" class="submit-btn">إرسال الطلب</button>
-            </form>
-            <div id="successMsg" class="success-message">🎉 تم إرسال طلبك بنجاح! سنتواصل معك قريباً.</div>
+        <!-- 2️⃣ قسم باقات الأسعار المخفضة والجديدة -->
+        <h2 class="section-title">باقات وأسعار تنظيم الـ Google Drive</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="card-title">الباقة الأساسية</div>
+                <div class="price-tag">49 <span>ر.س</span></div>
+                <p class="card-p">مناسبة للمشاريع الصغيرة أو الحسابات الشخصية فوضوية الملفات.</p>
+                <ul class="features-list">
+                    <li>ترتيب حتى 500 ملف</li>
+                    <li>إنشاء فهارس أساسية</li>
+                    <li>تسليم خلال 3 أيام</li>
+                </ul>
+            </div>
+
+            <div class="price-card featured">
+                <div class="card-title">الباقة المتقدمة</div>
+                <div class="price-tag">99 <span>ر.س</span></div>
+                <p class="card-p">الباقة المثالية للمتاجر الإلكترونية والشركات الناشئة لترتيب فخم.</p>
+                <ul class="features-list">
+                    <li>ترتيب ملفات غير محدود</li>
+                    <li>هيكلة المجلدات الملونة الذكية</li>
+                    <li>إعداد صلاحيات الموظفين الآمنة</li>
+                    <li>تسليم سريع خلال 48 ساعة</li>
+                </ul>
+            </div>
+
+            <div class="price-card">
+                <div class="card-title">باقة الأرشفة الدورية</div>
+                <div class="price-tag">199 <span>ر.س / شهرياً</span></div>
+                <p class="card-p">مخصصة للشركات الكبرى التي تحتاج لمتابعة وتدقيق وتنظيم مستمر للملفات.</p>
+                <ul class="features-list">
+                    <li>تنظيم وأرشفة أسبوعية</li>
+                    <li>فرز الفواتير والعقود تلقائياً</li>
+                    <li>دعم فني مخصص 24/7</li>
+                </ul>
+            </div>
         </div>
-    </div>
 
-    <script>
-        document.getElementById('joshaeForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const successMsg = document.getElementById('successMsg');
-            
-            submitBtn.innerText = 'جاري الإرسال...';
-            submitBtn.disabled = true;
-
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => data[key] = value);
-
-            fetch('https://formspree.io', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    successMsg.style.display = 'block';
-                    this.reset();
-                    submitBtn.innerText = 'تم الإرسال';
-                } else {
-                    alert('عذراً، حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.');
-                    submitBtn.innerText = 'إرسال الطلب';
-                    submitBtn.disabled = false;
-                }
-            }).catch(error => {
-                alert('عذراً، حدث خطأ في الاتصال.');
-                submitBtn.innerText = 'إرسال الطلب';
-                submitBtn.disabled = false;
-            });
-        });
-    </script>
-
-</body>
-</html>
+        <!-- 3️⃣ قسم آراء وتقييمات العملاء -->
+        <h2 class="section-title">ماذا يقول عملائنا عن JOSHAE؟</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="card-p">"كان الـ Google Drive الخاص بمتجري فوضى عارمة وفواتير الموردين ضائعة. فريق JOSHAE رتب لنا السحابة في 48 ساعة فقط، صرنا نصل لأي مستند بلمحة واحدة!"</p>
+                <div class="client-info">
