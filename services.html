@@ -14,25 +14,21 @@
             --success: #10b981;
             --warning: #f59e0b;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             background-color: var(--bg-light);
             color: var(--text-main);
             padding: 2rem;
             min-height: 100vh;
         }
-
         .nav-bar {
             max-width: 1200px;
             margin: 0 auto 3rem auto;
@@ -42,50 +38,42 @@
             padding: 1rem 0;
             border-bottom: 1px solid #e5e7eb;
         }
-
         .brand-name {
             font-size: 1.8rem;
             font-weight: 800;
             color: var(--primary);
             text-decoration: none;
         }
-
         .back-link {
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
         }
-
         .back-link:hover {
             color: var(--primary);
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .page-title {
             text-align: center;
             font-size: 2.2rem;
             margin-bottom: 3rem;
             color: var(--text-main);
         }
-
         .section-title {
             text-align: center;
             font-size: 1.8rem;
             margin: 5rem 0 2rem 0;
             color: var(--text-main);
         }
-
         .services-grid, .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-bottom: 4rem;
         }
-
         .service-card, .price-card {
             background: white;
             padding: 2rem;
@@ -96,17 +84,14 @@
             display: flex;
             flex-direction: column;
         }
-
         .service-card:hover, .price-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
-
         .price-card.featured {
             border: 2px solid var(--primary);
             position: relative;
         }
-
         .price-card.featured::before {
             content: 'عرض الافتتاح';
             position: absolute;
@@ -120,38 +105,32 @@
             font-weight: bold;
             border-radius: 20px;
         }
-
         .service-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
         }
-
         .card-title {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-main);
         }
-
         .card-p {
             color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
-
         .price-tag {
             font-size: 2rem;
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
-
         .price-tag span {
             font-size: 1rem;
             font-weight: 500;
             color: var(--text-muted);
         }
-
         .features-list {
             list-style: none;
             margin-bottom: 1.5rem;
@@ -164,13 +143,11 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .features-list li::before {
             content: '✓';
             color: var(--success);
             font-weight: bold;
         }
-
         .select-plan-btn {
             width: 100%;
             background: #eff6ff;
@@ -185,23 +162,19 @@
             text-align: center;
             margin-top: auto;
         }
-
         .select-plan-btn:hover {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
         }
-
         .price-card.featured .select-plan-btn {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
         }
-
         .price-card.featured .select-plan-btn:hover {
             background: var(--primary-dark);
         }
-
         .empty-reviews-card {
             background: white;
             border: 2px dashed #cbd5e1;
@@ -214,7 +187,6 @@
             font-size: 1.1rem;
             font-weight: 600;
         }
-
         .contact-section {
             background: white;
             max-width: 600px;
@@ -224,24 +196,20 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             border: 1px solid #e5e7eb;
         }
-
         .contact-section h2 {
             text-align: center;
             margin-bottom: 2rem;
         }
-
         .form-group {
             margin-bottom: 1.5rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
         }
-
         .form-group label {
             font-weight: 600;
             color: var(--text-main);
         }
-
         .form-group input, .form-group textarea, .form-group select {
             padding: 0.8rem;
             border: 1px solid #cbd5e1;
@@ -250,7 +218,6 @@
             width: 100%;
             background: white;
         }
-
         .submit-btn {
             width: 100%;
             background: var(--primary);
@@ -263,7 +230,6 @@
             cursor: pointer;
             transition: background 0.2s;
         }
-
         .submit-btn:hover {
             background: var(--primary-dark);
         }
@@ -286,7 +252,6 @@
                 <div class="card-title">هيكلة الملفات</div>
                 <p class="card-p">بناء نظام مجلدات مخصص ومدروس يناسب طبيعة عمل مشروعك لضمان عدم ضياع أي مستند.</p>
             </div>
-
             <div class="service-card">
                 <div class="service-icon">⚡</div>
                 <div class="card-title">الوصول السريع</div>
@@ -299,7 +264,7 @@
             </div>
         </div>
 
-        <!-- 2️⃣ قسم باقات الأسعار الموزونة -->
+        <!-- 2️⃣ قسم باقات الأسعار الموزونة (50 و 150 ملف) -->
         <h2 class="section-title">باقات وأسعار تنظيم الـ Google Drive</h2>
         <div class="pricing-grid">
             <div class="price-card">
@@ -313,7 +278,6 @@
                 </ul>
                 <button class="select-plan-btn" onclick="selectPlan('الباقة الأساسية (49 ريال)')">اطلب هذه الباقة</button>
             </div>
-
             <div class="price-card featured">
                 <div class="card-title">الباقة المتقدمة</div>
                 <div class="price-tag">99 <span>ر.س</span></div>
@@ -326,7 +290,6 @@
                 </ul>
                 <button class="select-plan-btn" onclick="selectPlan('الباقة المتقدمة (99 ريال)')">اطلب هذه الباقة</button>
             </div>
-
             <div class="price-card">
                 <div class="card-title">باقة الأرشفة الدورية</div>
                 <div class="price-tag">199 <span>ر.س / شهرياً</span></div>
