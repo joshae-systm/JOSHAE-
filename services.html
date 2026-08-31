@@ -22,6 +22,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth; /* هذه تجعل الانتقال لأسفل الصفحة ناعماً وفخماً */
+        }
+
         body {
             background-color: var(--bg-light);
             color: var(--text-main);
@@ -167,7 +171,8 @@
             font-weight: bold;
         }
 
-        .select-plan-btn {
+        /* تعديل الأزرار لتصبح روابط قفز سريعة ومضمونة */
+        .select-plan-link {
             width: 100%;
             background: #eff6ff;
             color: var(--primary);
@@ -180,21 +185,22 @@
             transition: all 0.2s;
             text-align: center;
             margin-top: auto;
+            text-decoration: none;
         }
 
-        .select-plan-btn:hover {
+        .select-plan-link:hover {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
         }
 
-        .price-card.featured .select-plan-btn {
+        .price-card.featured .select-plan-link {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
         }
 
-        .price-card.featured .select-plan-btn:hover {
+        .price-card.featured .select-plan-link:hover {
             background: var(--primary-dark);
         }
 
@@ -295,9 +301,10 @@
             </div>
         </div>
 
-        <!-- 2️⃣ قسم باقات الأسعار الموزونة (50 و 150 ملف) مع أزرار الانتقال التلقائي -->
+        <!-- 2️⃣ قسم باقات الأسعار الموزونة (مع روابط قفز مباشرة ومضمونة لأسفل الصفحة) -->
         <h2 class="section-title">باقات وأسعار تنظيم الـ Google Drive</h2>
         <div class="pricing-grid">
+            <!-- الباقة الأولى -->
             <div class="price-card">
                 <div class="card-title">الباقة الأساسية</div>
                 <div class="price-tag">49 <span>ر.س</span></div>
@@ -307,9 +314,10 @@
                     <li>إنشاء فهارس أساسية</li>
                     <li>تسليم خلال 3 أيام</li>
                 </ul>
-                <button class="select-plan-btn" onclick="selectPlan('الباقة الأساسية (49 ريال)')">اطلب هذه الباقة</button>
+                <a href="#orderFormSection" class="select-plan-link" onclick="writePlan('الباقة الأساسية (49 ريال)')">اطلب هذه الباقة</a>
             </div>
 
+            <!-- الباقة الثانية -->
             <div class="price-card featured">
                 <div class="card-title">الباقة المتقدمة</div>
                 <div class="price-tag">99 <span>ر.س</span></div>
@@ -320,11 +328,7 @@
                     <li>إعداد صلاحيات الموظفين الآمنة</li>
                     <li>تسليم سريع خلال 48 ساعة</li>
                 </ul>
-                <button class="select-plan-btn" onclick="selectPlan('الباقة المتقدمة (99 ريال)')">اطلب هذه الباقة</button>
+                <a href="#orderFormSection" class="select-plan-link" onclick="writePlan('الباقة المتقدمة (99 ريال)')">اطلب هذه الباقة</a>
             </div>
 
-            <div class="price-card">
-                <div class="card-title">باقة الأرشفة الدورية</div>
-                <div class="price-tag">199 <span>ر.س / شهرياً</span></div>
-                <p class="card-p">مخصصة للشركات الكبرى التي تحتاج لمتابعة وتدقيق وتنظيم مستمر للملفات.</p>
-                <ul class="features-list">
+            <!-- الباقة الثالثة -->
