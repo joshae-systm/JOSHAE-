@@ -109,6 +109,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             border: 1px solid #e5e7eb;
+            position: relative;
         }
 
         .contact-section h2 {
@@ -133,6 +134,7 @@
             border: 1px solid #cbd5e1;
             border-radius: 6px;
             font-size: 1rem;
+            width: 100%;
         }
 
         .submit-btn {
@@ -151,6 +153,16 @@
         .submit-btn:hover {
             background: var(--primary-dark);
         }
+        .success-message {
+            display: none;
+            background: #d1fae5;
+            color: #065f46;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -162,6 +174,7 @@
 
     <div class="container">
         <h1 class="page-title">ماذا نقدم في JOSHAE؟</h1>
+
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">📂</div>
@@ -185,26 +198,63 @@
         <div class="contact-section">
             <h2>اطلب تنظيم مشروعك الآن</h2>
             
-            <!-- تم دمج الرابط وضبط التوجيه التلقائي بالأسفل بدقة تامة -->
-            <form action="https://formspree.io" method="POST">
-                <input type="hidden" name="_next" value="https://github.io">
-                
+            <form id="joshaeForm">
                 <div class="form-group">
                     <label>الاسم الكريم</label>
-                    <input type="text" name="name" placeholder="اكتب اسمك هنا" required>
+                    <input type="text" name="name" id="name" placeholder="اكتب اسمك هنا" required>
                 </div>
                 <div class="form-group">
                     <label>نوع مشروعك</label>
-                    <input type="text" name="business_type" placeholder="مثال: متجر إلكتروني، شركة ناشئة..." required>
+                    <input type="text" name="business_type" id="business_type" placeholder="مثال: متجر إلكتروني، شركة ناشئة..." required>
                 </div>
                 <div class="form-group">
                     <label>تفاصيل إضافية</label>
-                    <textarea name="details" rows="4" placeholder="كيف يمكننا مساعدتك في تنظيم ملفاتك؟"></textarea>
+                    <textarea name="details" id="details" rows="4" placeholder="كيف يمكننا مساعدتك في تنظيم ملفاتك؟"></textarea>
                 </div>
-                <button type="submit" class="submit-btn">إرسال الطلب</button>
+                <button type="submit" id="submitBtn" class="submit-btn">إرسال الطلب</button>
             </form>
+            <div id="successMsg" class="success-message">🎉 تم إرسال طلبك بنجاح! سنتواصل معك قريباً.</div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('joshaeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('successMsg');
+            
+            submitBtn.innerText = 'جاري الإرسال...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+
+            fetch('https://formspree.io', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    successMsg.style.display = 'block';
+                    this.reset();
+                    submitBtn.innerText = 'تم الإرسال';
+                } else {
+                    alert('عذراً، حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.');
+                    submitBtn.innerText = 'إرسال الطلب';
+                    submitBtn.disabled = false;
+                }
+            }).catch(error => {
+                alert('عذراً، حدث خطأ في الاتصال.');
+                submitBtn.innerText = 'إرسال الطلب';
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
 
 </body>
 </html>
