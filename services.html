@@ -61,6 +61,12 @@
             color: var(--primary);
         }
 
+        /* 📱 كود ذكي لإجبار البطاقات على النزول تحت بعضها في الجوال للترتيب */
+        @media (max-width: 900px) {
+            .services-grid, .pricing-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
