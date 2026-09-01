@@ -3,122 +3,360 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<title>JOSHAE - التنظيم الرقمي</title>
+
+<title>JOSHAE | التنظيم الرقمي</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body{
+    margin:0;
+    font-family:Arial,Tahoma,sans-serif;
+    background:#fff;
+    color:#172033;
 }
 
-body {
-    font-family: Arial, Tahoma, sans-serif;
-    background: #ffffff;
-    color: #172033;
+header{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    border-bottom:1px solid #eee;
 }
 
-.hero {
-    min-height: 100vh;
-    padding: 25px 6%;
-    background:
-        radial-gradient(circle at 75% 45%, #eef4ff 0%, #ffffff 42%);
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    color:#1769e0;
+    direction:ltr;
 }
 
-/* الهيدر */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #edf0f5;
+nav a{
+    margin:0 15px;
+    text-decoration:none;
+    color:#555;
 }
 
-.logo {
-    font-size: 38px;
-    font-weight: 800;
-    color: #1769e0;
-    direction: ltr;
+.top-btn{
+    padding:12px 22px;
+    border:2px solid #1769e0;
+    border-radius:10px;
+    background:white;
+    color:#1769e0;
+    font-weight:bold;
 }
 
-.nav-links {
-    display: flex;
-    gap: 35px;
+.hero{
+    min-height:650px;
+    padding:70px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    background:linear-gradient(120deg,#fff,#f2f6ff);
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #5b6473;
-    font-size: 16px;
-    font-weight: 600;
+.text{
+    max-width:600px;
 }
 
-.nav-links a:first-child {
-    color: #1769e0;
+.badge{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid #dce5f5;
+    border-radius:30px;
+    color:#555;
+    background:white;
 }
 
-.nav-btn {
-    padding: 13px 25px;
-    border: 1.5px solid #1769e0;
-    border-radius: 12px;
-    background: white;
-    color: #1769e0;
-    font-weight: bold;
-    cursor: pointer;
+h1{
+    font-size:55px;
+    line-height:1.3;
+    margin:25px 0;
 }
 
-/* القسم الرئيسي */
-.hero-content {
-    max-width: 1250px;
-    margin: 70px auto 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 55px;
-    align-items: center;
+.blue{
+    color:#1769e0;
 }
 
-.badge {
-    display: inline-block;
-    padding: 12px 20px;
-    border: 1px solid #dce7fa;
-    border-radius: 30px;
-    color: #303b4e;
-    background: #fff;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 20px rgba(20,80,160,.05);
+.description{
+    font-size:18px;
+    line-height:2;
+    color:#697386;
 }
 
-.badge span {
-    color: #1769e0;
-    font-weight: bold;
+.features{
+    display:flex;
+    gap:10px;
+    margin:30px 0;
 }
 
-/* العنوان */
-h1 {
-    font-size: clamp(40px, 5vw, 68px);
-    line-height: 1.25;
-    font-weight: 800;
-    margin-bottom: 25px;
+.feature{
+    background:white;
+    border:1px solid #e5e9f0;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    flex:1;
 }
 
-h1 .blue {
-    color: #1769e0;
+.feature b{
+    display:block;
+    margin-bottom:5px;
 }
 
-.description {
-    color: #697386;
-    font-size: 18px;
-    line-height: 2;
-    max-width: 620px;
+.feature span{
+    font-size:13px;
+    color:#888;
 }
 
-/* المميزات */
-.features {
-    display: flex;
-    background: white;
-    border: 1px solid #e5eaf2;
-    border-radius: 20px;
-    margin-top: 30px;
-    padding: 18px;
-    box-shadow: 0 10px 35px rgba(0
+.main-btn{
+    background:#1769e0;
+    color:white;
+    border:0;
+    padding:17px 30px;
+    border-radius:12px;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.visual{
+    width:500px;
+    max-width:100%;
+}
+
+.laptop{
+    background:#202733;
+    padding:12px;
+    border-radius:15px;
+    box-shadow:0 25px 50px #b9c7df;
+}
+
+.screen{
+    background:#f7f9fc;
+    padding:25px;
+    border-radius:8px;
+}
+
+.drive{
+    font-size:22px;
+    font-weight:bold;
+    color:#1769e0;
+    margin-bottom:20px;
+}
+
+.folders{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.folder{
+    background:white;
+    padding:20px 8px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 3px 10px #ddd;
+}
+
+.folder div{
+    font-size:35px;
+}
+
+.folder small{
+    color:#555;
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    padding:30px;
+    background:white;
+    text-align:center;
+}
+
+.stats b{
+    display:block;
+    color:#1769e0;
+    font-size:25px;
+}
+
+.stats span{
+    color:#777;
+}
+
+@media(max-width:900px){
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:50px 20px;
+    }
+
+    h1{
+        font-size:38px;
+    }
+
+    .features{
+        flex-direction:column;
+    }
+
+    .visual{
+        width:95%;
+    }
+
+    .stats{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">JOSHAE</div>
+
+<nav>
+<a href="#">الرئيسية</a>
+<a href="#">الخدمات</a>
+<a href="#">الباقات</a>
+<a href="#">عن الوكالة</a>
+<a href="#">التواصل</a>
+</nav>
+
+<button class="top-btn">طلب خدمة الآن</button>
+
+</header>
+
+
+<section class="hero">
+
+<div class="text">
+
+<div class="badge">
+وكالة <b>JOSHAE</b> للتنظيم الرقمي
+</div>
+
+<h1>
+رتّب مساحتك الرقمية...
+<br>
+<span class="blue">وخلك دائمًا مسيطر</span>
+<br>
+على ملفاتك
+</h1>
+
+<p class="description">
+نساعد أصحاب المشاريع والمتاجر الناشئة في فرز وهيكلة ملفات
+Google Drive وحمايتها لضمان سهولة الوصول والإنتاجية العالية.
+</p>
+
+
+<div class="features">
+
+<div class="feature">
+📁
+<b>هيكلة ذكية</b>
+<span>تنظيم يناسب عملك</span>
+</div>
+
+<div class="feature">
+⚡
+<b>سرعة في الوصول</b>
+<span>توفر وقتك وجهدك</span>
+</div>
+
+<div class="feature">
+🛡️
+<b>خصوصية وأمان</b>
+<span>حماية تامة لملفاتك</span>
+</div>
+
+</div>
+
+<button class="main-btn">
+تصفح الخدمات والباقات ←
+</button>
+
+</div>
+
+
+<div class="visual">
+
+<div class="laptop">
+    <div class="screen">
+
+<div class="drive">
+☁️ Google Drive
+</div>
+
+<div class="folders">
+
+<div class="folder">
+<div>📁</div>
+<small>الفواتير</small>
+</div>
+
+<div class="folder">
+<div>📁</div>
+<small>صور المنتجات</small>
+</div>
+
+<div class="folder">
+<div>📁</div>
+<small>ملفات العملاء</small>
+</div>
+
+<div class="folder">
+<div>📁</div>
+<small>المستندات</small>
+</div>
+
+<div class="folder">
+<div>📁</div>
+<small>التسويق</small>
+</div>
+
+<div class="folder">
+<div>📁</div>
+<small>التقارير</small>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="stats">
+
+<div>
+<b>48 ساعة</b>
+<span>مدة الإنجاز</span>
+</div>
+
+<div>
+<b>50 ملف</b>
+<span>في الباقة الأساسية</span>
+</div>
+
+<div>
+<b>100%</b>
+<span>خصوصية</span>
+</div>
+
+</div>
+
+</body>
+</html>
