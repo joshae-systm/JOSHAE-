@@ -1,136 +1,60 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOSHAE - منصتك الرقمية المنظمة</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --text-main: #1f2937;
-            --text-muted: #4b5563;
-            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: var(--bg-gradient);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .hero-container {
-            max-width: 800px;
+/* 📊 شريط الإحصائيات السفلي الأنيق الممتد */
+        .stats-bar {
+            width: 100%;
+            max-width: 1200px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 3rem;
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             text-align: center;
-            background: white;
-            padding: 3.5rem 2.5rem;
-            border-radius: 24px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
-        .brand-logo {
-            font-size: 3rem;
+        .stat-card h3 {
+            font-size: 2.2rem;
             font-weight: 900;
             color: var(--primary);
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.3rem;
         }
 
-        .hero-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1.4;
-            color: var(--text-main);
-            margin-bottom: 1.2rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-            max-width: 600px;
-            margin: 0 auto 2.5rem auto;
-        }
-
-        .features-badge-group {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: #eff6ff;
-            color: var(--primary);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
+        .stat-card p {
             font-size: 0.95rem;
+            color: var(--text-muted);
             font-weight: 600;
-            border: 1px solid #bfdbfe;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 1.1rem 2.8rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-        }
-
-        .cta-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
-        }
-
-        .cta-button:active {
-            transform: translateY(-1px);
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-container">
-        <!-- اسم البراند الفخم -->
-        <div class="brand-logo">JOSHAE</div>
+    <div class="main-wrapper">
         
-        <!-- العنوان الرئيسي الجذاب -->
-        <h1 class="hero-title">مساحتك الرقمية المتكاملة، بترتيب أسهل وسرعة قصوى</h1>
-        
-        <!-- الوصف التسويقي المقنع -->
-        <p class="hero-subtitle">نساعد أصحاب المشاريع والمتاجر الناشئة في فرز وهيكلة ملفات الـ Google Drive وحمايتها لضمان سهولة الوصول والإنتاجية العالية.</p>
-        
-        <!-- مميزات سريعة لزيادة الموثوقية -->
-        <div class="features-badge-group">
-            <span class="badge">🔒 أرشفة آمنة 100%</span>
-            <span class="badge">⚡ سرعة في الوصول</span>
-            <span class="badge">📂 هيكلة ذكية مخصصة</span>
-        </div>
-
-        <!-- زر العبور الذكي المربوط مباشرة بصفحة الخدمات الحية -->
-        <a href="services.html" class="cta-button">تصفح الخدمات والباقات</a>
-    </div>
-
-</body>
-</html>
+        <!-- الجانب الأيمن: المحتوى والعبارات التسويقية والزر -->
+        <div class="content-side">
+            <div class="badge-brand">🔹 وكالة JOSHAE للتنظيم الرقمي</div>
+            
+            <h1 class="main-heading">
+                رتب مساحتك الرقمية...
+                <span>وخلك دائماً مسيطر على ملفاتك</span>
+            </h1>
+            
+            <p class="sub-text">نساعد أصحاب المشاريع والمتاجر الناشئة في فرز وهيكلة ملفات الـ Google Drive وحمايتها لضمان سهولة الوصول والإنتاجية العالية.</p>
+            
+            <!-- المميزات الثلاث الفرعية الأفقية -->
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-info">
+                        <strong>أمان بنسبة 100%</strong>
+                        <span>حماية وخصوصية تامة</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-info">
+                        <strong>سرعة في الوصول</strong>
+                        <span>توفر وقتك وجهدك</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📂</div>
+                    <div class="feature-info">
