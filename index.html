@@ -1,4 +1,257 @@
-/* 📊 شريط الإحصائيات السفلي الأنيق الممتد */
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOSHAE - منصتك الرقمية المنظمة</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 968px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+            .features-list {
+                justify-content: center;
+            }
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 2rem;
+            }
+        }
+
+        .content-side {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @media (max-width: 968px) {
+            .content-side {
+                align-items: center;
+            }
+        }
+
+        .badge-brand {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid #bfdbfe;
+        }
+
+        .main-heading {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.25;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+        }
+
+        .main-heading span {
+            color: var(--primary);
+            display: block;
+        }
+
+        .sub-text {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .features-list {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            flex: 1;
+            min-width: 160px;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            background: #eff6ff;
+            padding: 0.4rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-info strong {
+            display: block;
+            font-size: 0.95rem;
+            color: #0f172a;
+        }
+
+        .feature-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .btn-cta {
+            display: inline-flex;
+                align-items: center;
+            gap: 0.8rem;
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -3px rgba(37, 99, 235, 0.3);
+            margin-bottom: 4rem;
+        }
+
+        .btn-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        .visual-side {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .mockup-laptop {
+            background: #ffffff;
+            border: 12px solid #1e293b;
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 16 / 10;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            position: relative;
+        }
+
+        .mockup-screen-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--primary);
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .mockup-folders-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+        }
+
+        .mockup-folder {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .mockup-folder::before {
+            content: '📁';
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+            color: #3b82f6;
+        }
+
+        .mockup-laptop-base {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110%;
+            height: 10px;
+            background: #64748b;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .shield-badge {
+            position: absolute;
+            bottom: -20px;
+            right: 10%;
+            background: #2563eb;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+            font-weight: bold;
+        }
+
         .stats-bar {
             width: 100%;
             max-width: 1200px;
@@ -27,19 +280,14 @@
 <body>
 
     <div class="main-wrapper">
-        
-        <!-- الجانب الأيمن: المحتوى والعبارات التسويقية والزر -->
         <div class="content-side">
             <div class="badge-brand">🔹 وكالة JOSHAE للتنظيم الرقمي</div>
-            
             <h1 class="main-heading">
                 رتب مساحتك الرقمية...
                 <span>وخلك دائماً مسيطر على ملفاتك</span>
             </h1>
-            
             <p class="sub-text">نساعد أصحاب المشاريع والمتاجر الناشئة في فرز وهيكلة ملفات الـ Google Drive وحمايتها لضمان سهولة الوصول والإنتاجية العالية.</p>
             
-            <!-- المميزات الثلاث الفرعية الأفقية -->
             <div class="features-list">
                 <div class="feature-item">
                     <div class="feature-icon">🛡️</div>
@@ -58,3 +306,42 @@
                 <div class="feature-item">
                     <div class="feature-icon">📂</div>
                     <div class="feature-info">
+                        <strong>هيكلة ذكية مخصصة</strong>
+                        <span>تنظيم يناسب عملك</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="services.html" class="btn-cta">
+                تصفح الخدمات والباقات ←
+            </a>
+        </div>
+
+        <div class="visual-side">
+            <div class="mockup-laptop">
+                <div class="mockup-screen-title">My Drive - JOSHAE التنظيم الذكي</div>
+                <div class="mockup-folders-grid">
+                    <div class="mockup-folder">الفواتير</div>
+                    <div class="mockup-folder">صور المنتجات</div>
+                    <div class="mockup-folder">ملفات العملاء</div>
+                    <div class="mockup-folder">المستندات</div>
+                    <div class="mockup-folder">التسويق</div>
+                    <div class="mockup-folder">التقارير</div>
+                </div>
+                <div class="mockup-laptop-base"></div>
+                <div class="shield-badge">✓</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-card">
+            <h3>+500</h3>
+            <p>عميل راضٍ</p>
+        </div>
+        <div class="stat-card">
+            <h3>+100K</h3>
+            <p>ملف تم تنظيمه</p>
+        </div>
+        <div class="stat-card">
+            <h3>48 ساعة</h3>
