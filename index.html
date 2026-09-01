@@ -14,9 +14,7 @@
     --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -53,9 +51,7 @@ nav a {
     font-weight: 600;
 }
 
-nav a:hover, nav a.active {
-    color: var(--primary);
-}
+nav a:hover, nav a.active { color: var(--primary); }
 
 .top-btn {
     padding: 12px 22px;
@@ -69,10 +65,7 @@ nav a:hover, nav a.active {
     transition: all 0.2s;
 }
 
-.top-btn:hover {
-    background: var(--primary);
-    color: white;
-}
+.top-btn:hover { background: var(--primary); color: white; }
 
 .hero {
     min-height: 650px;
@@ -84,9 +77,7 @@ nav a:hover, nav a.active {
     background: linear-gradient(120deg, #fff, #f2f6ff);
 }
 
-.text {
-    max-width: 600px;
-}
+.text { max-width: 600px; }
 
 .badge {
     display: inline-block;
@@ -105,21 +96,11 @@ h1 {
     font-weight: 900;
 }
 
-.blue {
-    color: var(--primary);
-}
+.blue { color: var(--primary); }
 
-.description {
-    font-size: 18px;
-    line-height: 2;
-    color: var(--text-muted);
-}
+.description { font-size: 18px; line-height: 2; color: var(--text-muted); }
 
-.features {
-    display: flex;
-    gap: 10px;
-    margin: 30px 0;
-}
+.features { display: flex; gap: 10px; margin: 30px 0; }
 
 .feature {
     background: white;
@@ -131,16 +112,8 @@ h1 {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
 }
 
-.feature b {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 0.95rem;
-}
-
-.feature span {
-    font-size: 13px;
-    color: #888;
-}
+.feature b { display: block; margin-bottom: 5px; font-size: 0.95rem; }
+.feature span { font-size: 13px; color: #888; }
 
 .main-btn {
     display: inline-block;
@@ -157,16 +130,9 @@ h1 {
     transition: all 0.2s;
 }
 
-.main-btn:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-}
+.main-btn:hover { background: var(--primary-hover); transform: translateY(-2px); }
 
-.visual {
-    width: 500px;
-    max-width: 100%;
-    position: relative;
-}
+.visual { width: 500px; max-width: 100%; position: relative; }
 
 .laptop {
     background: #202733;
@@ -195,31 +161,12 @@ h1 {
     direction: ltr;
 }
 
-.screen-dots {
-    display: flex;
-    gap: 6px;
-}
+.screen-dots { display: flex; gap: 6px; }
+.screen-dots span { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
 
-.screen-dots span {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-}
+.drive { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); font-family: sans-serif; }
 
-.drive {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    font-family: sans-serif;
-}
-
-.folders {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.8rem;
-    margin-top: 0.3rem;
-}
+.folders { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 0.3rem; }
 
 .folder {
     background: #f8fafc;
@@ -229,19 +176,9 @@ h1 {
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
-  .folder-icon {
-    font-size: 1.8rem;
-    display: block;
-    margin-bottom: 0.4rem;
-}
 
-.folder small {
-    color: #334155;
-    font-weight: 700;
-    font-size: 0.75rem;
-}
-
-.shield-badge {
+.folder small { color: #334155; font-weight: 700; font-size: 0.75rem; }
+    .shield-badge {
     position: absolute;
     bottom: -20px;
     right: -15px;
@@ -259,14 +196,7 @@ h1 {
     font-weight: bold;
 }
 
-.cloud-decor {
-    position: absolute;
-    bottom: -25px;
-    left: -20px;
-    font-size: 2.5rem;
-    opacity: 0.8;
-    z-index: 3;
-}
+.cloud-decor { position: absolute; bottom: -25px; left: -20px; font-size: 2.5rem; opacity: 0.8; z-index: 3; }
 
 .stats {
     display: flex;
@@ -278,75 +208,19 @@ h1 {
     border-top: 1px solid #e5e9f0;
 }
 
-.stats b {
-    display: block;
-    color: #1769e0;
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 0.3rem;
-}
-
-.stats span {
-    color: var(--text-muted);
-    font-weight: 600;
-    font-size: 0.9rem;
-}
+.stats b { display: block; color: #1769e0; font-size: 28px; font-weight: 800; margin-bottom: 0.3rem; }
+.stats span { color: var(--text-muted); font-weight: 600; font-size: 0.9rem; }
 
 @media(max-width:900px){
-    nav {
-        display: none;
-    }
-
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 50px 20px;
-        gap: 40px;
-    }
-
-    .text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    .features {
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
-    }
-
-    .visual {
-        width: 95%;
-    }
-
-    .folders {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 0.5rem !important;
-    }
-
-    .folder {
-        padding: 0.6rem 0.3rem !important;
-    }
-
-    .folder-icon {
-        font-size: 1.5rem !important;
-    }
-
-    .folder small {
-        font-size: 0.65rem !important;
-    }
-
-    .stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 25px;
-        padding: 30px 20px;
-    }
+    nav { display: none; }
+    .hero { flex-direction: column-reverse; text-align: center; padding: 50px 20px; gap: 40px; }
+    .text { display: flex; flex-direction: column; align-items: center; }
+    h1 { font-size: 36px; }
+    .features { flex-direction: column; width: 100%; gap: 15px; }
+    .visual { width: 95%; }
+    .folders { grid-template-columns: repeat(3, 1fr) !important; gap: 0.5rem !important; }
+    .folder { padding: 0.6rem 0.3rem !important; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; padding: 30px 20px; }
 }
 </style>
 </head>
@@ -357,32 +231,18 @@ h1 {
     <a href="index.html" class="logo" style="text-decoration:none;">JOSHAE</a>
     <nav>
         <a href="index.html" class="active">الرئيسية</a>
-        <a href="services.html">الخدمات</a>
-        <a href="services.html#pricing">الباقات</a>
-        <a href="#">عن الوكالة</a>
-        <a href="#">التواصل</a>
+        <a href="services.html#about-us">عن الوكالة</a> <!-- 👈 ربط سحري مباشر لصفحة الخدمات -->
+        <a href="services.html#pricing">الباقات</a>     <!-- 👈 يطير بالعميل لبطاقات الأسعار تلقائياً -->
+        <a href="services.html#contact-us">التواصل</a>  <!-- 👈 يطير بالعميل لصندوق الطلب والتقييم -->
     </nav>
     <a href="services.html" class="top-btn" style="text-decoration:none;">طلب خدمة الآن</a>
 </header>
 
 <section class="hero">
     <div class="text">
-        <div class="badge">
-            وكالة <b>JOSHAE</b> للتنظيم الرقمي
-        </div>
-
-        <h1>
-            رتّب مساحتك الرقمية...
-            <br>
-            <span class="blue">وخلك دائمًا مسيطر</span>
-            <br>
-            على ملفاتك
-        </h1>
-
-        <p class="description">
-            نساعد أصحاب المشاريع والمتاجر الناشئة في فرز وهيكلة ملفات
-            Google Drive وحمايتها لضمان سهولة الوصول والإنتاجية العالية.
-        </p>
+        <div class="badge">وكالة <b>JOSHAE</b> للتنظيم الرقمي</div>
+        <h1>رتّب مساحتك الرقمية...<br><span class="blue">وخلك دائمًا مسيطر</span><br>على ملفاتك</h1>
+        <p class="description">نساعد أصحاب المشاريع والمتاجر الناشئة في فرز وهيكلة ملفات Google Drive وحمايتها لضمان سهولة الوصول والإنتاجية العالية.</p>
 
         <div class="features">
             <div class="feature">
@@ -390,13 +250,11 @@ h1 {
                 <b>هيكلة ذكية</b>
                 <span>تنظيم يناسب عملك</span>
             </div>
-
             <div class="feature">
                 <div style="font-size: 1.3rem; margin-bottom: 0.3rem;">⚡</div>
                 <b>سرعة في الوصول</b>
                 <span>توفر وقتك وجهدك</span>
             </div>
-
             <div class="feature">
                 <div style="font-size: 1.3rem; margin-bottom: 0.3rem;">🛡️</div>
                 <b>خصوصية وأمان</b>
@@ -409,7 +267,7 @@ h1 {
 
     <div class="visual">
         <div class="laptop">
-          <div class="screen">
+            <div class="screen">
                 <div class="screen-header">
                     <div class="screen-dots">
                         <span style="background: #ef4444;"></span>
@@ -420,36 +278,25 @@ h1 {
                 </div>
 
                 <div class="folders">
-                    <div class="folder">
-                        <span class="folder-icon" style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span>
-                        <small>الفواتير</small>
-                    </div>
-
-                    <div class="folder">
-                        <span class="folder-icon" style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span>
-                        <small>صور المنتجات</small>
-                    </div>
-
-                    <div class="folder">
-                        <span class="folder-icon" style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span>
-                        <small>ملفات العملاء</small>
-                    </div>
-
-                    <div class="folder">
-                        <span class="folder-icon" style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span>
-                        <small>المستندات</small>
-                    </div>
-
-                    <div class="folder">
-                        <span class="folder-icon" style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span>
-                        <small>التسويق</small>
-                    </div>
-
-                    <div class="folder">
-                        <span class="folder-icon" style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span>
-                        <small>التقارير</small>
-                    </div>
+                    <div class="folder"><span style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span><small>الفواتير</small></div>
+                    <div class="folder"><span style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span><small>صور المنتجات</small></div>
+                    <div class="folder"><span style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span><small>ملفات العملاء</small></div>
+                    <div class="folder"><span style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span><small>المستندات</small></div>
+                    <div class="folder"><span style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span><small>التسويق</small></div>
+                    <div class="folder"><span style="color: #1769e0; font-size: 1.8rem; display: block; margin-bottom: 0.4rem;">📁</span><small>التقارير</small></div>
                 </div>
             </div>
         </div>
         <div class="shield-badge">✓</div>
+        <div class="cloud-decor">☁️</div>
+    </div>
+</section>
+
+<div class="stats">
+    <div><b>48 ساعة</b><span>مدة الإنجاز</span></div>
+    <div><b>50 ملف</b><span>في الباقة الأساسية</span></div>
+    <div><b>100%</b><span>خصوصية وأمان</span></div>
+</div>
+
+</body>
+</html>
