@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOSHAE - تنظيم رقمي ذكي</title>
+    <title>JOSHAE - منصتك الرقمية المنظمة</title>
     <style>
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
             --text-main: #1f2937;
             --text-muted: #4b5563;
-            --bg-light: #f9fafb;
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
 
         * {
@@ -21,243 +21,115 @@
         }
 
         body {
-            background-color: var(--bg-light);
+            background: var(--bg-gradient);
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 2rem;
         }
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        .hero-container {
+            max-width: 800px;
+            text-align: center;
+            background: white;
+            padding: 3.5rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
-        .content-section {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .brand-name {
-            font-size: 2.5rem;
-            font-weight: 800;
+        .brand-logo {
+            font-size: 3rem;
+            font-weight: 900;
             color: var(--primary);
             letter-spacing: 1px;
+            margin-bottom: 1.5rem;
         }
 
-        .main-heading {
+        .hero-title {
             font-size: 2.2rem;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.4;
             color: var(--text-main);
+            margin-bottom: 1.2rem;
         }
 
-        .sub-heading {
+        .hero-subtitle {
             font-size: 1.2rem;
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .features-badge-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid #bfdbfe;
         }
 
         .cta-button {
             display: inline-block;
-            width: fit-content;
-            background-color: var(--primary);
+            background: var(--primary);
             color: white;
-            padding: 0.8rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
+            padding: 1.1rem 2.8rem;
+            font-size: 1.2rem;
+            font-weight: 700;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             text-decoration: none;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
         }
 
         .cta-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
         }
 
-        .visual-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .laptop-mockup {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            perspective: 1000px;
-        }
-
-        .laptop-screen {
-            background: #000;
-            border: 12px solid #2d3748;
-            border-radius: 16px 16px 0 0;
-            aspect-ratio: 16 / 10;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-
-        .system-ui {
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .system-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 0.5rem;
-        }
-
-        .window-dots {
-            display: flex;
-            gap: 4px;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-        .dot-r { background: #ef4444; }
-        .dot-y { background: #f59e0b; }
-        .dot-g { background: #10b981; }
-
-        .system-search {
-            width: 120px;
-            height: 14px;
-            background: #f3f4f6;
-            border-radius: 4px;
-        }
-
-        .grid-files {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.8rem;
-            flex-grow: 1;
-        }
-                .folder-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 0.6rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        .folder-icon {
-            width: 24px;
-            height: 20px;
-            background: #fcd34d;
-            border-radius: 4px;
-            position: relative;
-        }
-        .folder-icon::before {
-            content: '';
-            position: absolute;
-            top: -4px;
-            left: 0;
-            width: 10px;
-            height: 4px;
-            background: #fcd34d;
-            border-radius: 2px 2px 0 0;
-        }
-
-        .file-line {
-            height: 6px;
-            background: #cbd5e1;
-            border-radius: 2px;
-        }
-        .file-line.short { width: 60%; }
-        .file-line.long { width: 85%; }
-
-        .laptop-base {
-            height: 12px;
-            background: #a0aec0;
-            border-radius: 0 0 12px 12px;
-            position: relative;
-        }
-        .laptop-base::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: #718096;
-            border-radius: 0 0 4px 4px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-            .content-section {
-                align-items: center;
-            }
-            .main-heading {
-                font-size: 1.8rem;
-            }
+        .cta-button:active {
+            transform: translateY(-1px);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="content-section">
-            <div class="brand-name">JOSHAE</div>
-            <h1 class="main-heading">نرتّب ملفات مشروعك، لتصل لكل شيء بسهولة.</h1>
-            <p class="sub-heading">تنظيم رقمي واضح وبسيط لمشروعك.</p>
-            <a href="services.html" class="cta-button">ابدأ الآن</a>
+    <div class="hero-container">
+        <!-- اسم البراند الفخم -->
+        <div class="brand-logo">JOSHAE</div>
+        
+        <!-- العنوان الرئيسي الجذاب -->
+        <h1 class="hero-title">مساحتك الرقمية المتكاملة، بترتيب أسهل وسرعة قصوى</h1>
+        
+        <!-- الوصف التسويقي المقنع -->
+        <p class="hero-subtitle">نساعد أصحاب المشاريع والمتاجر الناشئة في فرز وهيكلة ملفات الـ Google Drive وحمايتها لضمان سهولة الوصول والإنتاجية العالية.</p>
+        
+        <!-- مميزات سريعة لزيادة الموثوقية -->
+        <div class="features-badge-group">
+            <span class="badge">🔒 أرشفة آمنة 100%</span>
+            <span class="badge">⚡ سرعة في الوصول</span>
+            <span class="badge">📂 هيكلة ذكية مخصصة</span>
         </div>
 
-        <div class="visual-section">
-            <div class="laptop-mockup">
-                <div class="laptop-screen">
-                    <div class="system-ui">
-                        <div class="system-header">
-                            <div class="window-dots">
-                                <span class="dot dot-r"></span>
-                                <span class="dot dot-y"></span>
-                                <span class="dot dot-g"></span>
-                            </div>
-                            <div class="system-search"></div>
-                        </div>
-                        <div class="grid-files">
-                            <div class="folder-card"><div class="folder-icon"></div><div class="file-line long"></div><div class="file-line short"></div></div>
-                            <div class="folder-card"><div class="folder-icon" style="background: #60a5fa;"></div><div class="file-line long"></div><div class="file-line short"></div></div>
-                            <div class="folder-card"><div class="folder-icon"></div><div class="file-line long"></div><div class="file-line short"></div></div>
-                            <div class="folder-card"><div class="folder-icon"></div><div class="file-line long"></div><div class="file-line short"></div></div>
-                            <div class="folder-card"><div class="folder-icon" style="background: #34d399;"></div><div class="file-line long"></div><div class="file-line short"></div></div>
-                            <div class="folder-card"><div class="folder-icon"></div><div class="file-line long"></div><div class="file-line short"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="laptop-base"></div>
-            </div>
-        </div>
+        <!-- زر العبور الذكي المربوط مباشرة بصفحة الخدمات الحية -->
+        <a href="services.html" class="cta-button">تصفح الخدمات والباقات</a>
     </div>
 
 </body>
