@@ -185,5 +185,200 @@
                 <button type="submit" class="submit-btn">إرسال الرد</button>
             </form>
         </div>
+        <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOSHAE - شاركنا رأيك وتقييمك</title>
+<style>
+:root {
+--primary: #2563eb;
+--primary-dark: #1d4ed8;
+--text-main: #1f2937;
+--text-muted: #4b5563;
+--bg-light: #f9fafb;
+--warning: #f59e0b;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background-color: var(--bg-light);
+color: var(--text-main);
+padding: 2rem;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.nav-bar {
+width: 100%;
+max-width: 600px;
+margin-bottom: 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 0;
+border-bottom: 1px solid #e5e7eb;
+}
+
+.brand-name {
+font-size: 1.8rem;
+font-weight: 800;
+color: var(--primary);
+text-decoration: none;
+}
+
+.back-link {
+color: var(--text-muted);
+text-decoration: none;
+font-weight: 600;
+}
+
+.back-link:hover {
+color: var(--primary);
+}
+
+.section-title {
+text-align: center;
+font-size: 1.8rem;
+margin-bottom: 1.5rem;
+color: var(--text-main);
+}
+
+.empty-reviews-card {
+background: white;
+border: 2px dashed #cbd5e1;
+padding: 2rem;
+border-radius: 12px;
+text-align: center;
+max-width: 600px;
+width: 100%;
+margin-bottom: 2.5rem;
+color: var(--text-muted);
+font-size: 1.1rem;
+font-weight: 600;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.contact-section {
+background: white;
+width: 100%;
+max-width: 600px;
+padding: 2.5rem;
+border-radius: 12px;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+border: 1px solid #e5e7eb;
+}
+
+.form-group {
+margin-bottom: 1.5rem;
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.form-group label {
+font-weight: 600;
+color: var(--text-main);
+}
+
+.form-group input, .form-group textarea, .form-group select {
+padding: 0.8rem;
+border: 1px solid #cbd5e1;
+border-radius: 6px;
+font-size: 1rem;
+width: 100%;
+background: white;
+}
+
+.submit-btn {
+width: 100%;
+background: var(--primary);
+color: white;
+padding: 1rem;
+border: none;
+border-radius: 6px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: background 0.2s;
+}
+
+.submit-btn:hover {
+background: var(--primary-dark);
+}
+</style>
+</head>
+<body>
+
+<!-- شريط التنقل العلوي -->
+<nav class="nav-bar">
+<a href="index.html" class="brand-name">JOSHAE</a>
+<a href="index.html" class="back-link">→ العودة للرئيسية</a>
+</nav>
+
+<!-- قسم آراء العملاء -->
+<h2 class="section-title">آراء العملاء</h2>
+<div class="empty-reviews-card">
+✨ لا توجد آراء بعد.. شاركنا تجربتك ورأيك بالخدمة لتكون أول المقيمين في النموذج بالأسفل! 👇
+</div>
+
+<!-- نموذج جمع البيانات والتعليقات والردود المباشر والمضمون 100% -->
+<div class="contact-section">
+<h2 style="text-align: center; margin-bottom: 2rem;">شاركنا رأيك وتقييمك بالخدمة</h2>
+
+<form action="https://formspree.io" method="POST">
+<input type="hidden" name="_next" value="https://github.io">
+
+<!-- 1️⃣ خانة الاسم الكريم -->
+<div class="form-group">
+<label>الاسم الكريم</label>
+<input type="text" name="name" placeholder="اكتب اسمك هنا" required>
+</div>
+
+<!-- 2️⃣ خانة البريد الإلكتروني -->
+<div class="form-group">
+<label>بريدك الإلكتروني</label>
+<input type="email" name="_replyto" placeholder="name@example.com" required>
+</div>
+
+<!-- 3️⃣ خانة نوع الخدمة المطلوبة -->
+<div class="form-group">
+<label>نوع الخدمة المطلوب / سبب التواصل</label>
+<input type="text" name="business_type" placeholder="مثال: تنظيم Google Drive، أو كتابة تقييم ورأي..." required>
+</div>
+
+<!-- 4️⃣ خانة خيارات التقييم بالنجوم للتعليق -->
+<div class="form-group">
+<label>تقييمك للخدمة بالنجوم (اختياري)</label>
+<select name="rating">
+<option value="بدون تقييم">اختر التقييم...</option>
+<option value="5 نجوم">★★★★★ (ممتاز جداً)</option>
+<option value="4 نجوم">★★★★☆ (جيد جدا)</option>
+<option value="3 نجوم">★★★☆☆ (متوسط)</option>
+</select>
+</div>
+ <!-- 5️⃣ خانة تفاصيل التعليق والرأي الحُر الزائدة -->
+<div class="form-group">
+<label>تفاصيل تعليقك ورأيك الحُر في خدمات JOSHAE</label>
+<textarea name="details" rows="5" placeholder="شاركنا تجربتك ورأيك الصادق أو تفاصيل طلبك هنا..." required></textarea>
+</div>
+
+<!-- 6️⃣ زر إرسال الرد الصريح والمطلوب -->
+<button type="submit" class="submit-btn">إرسال الرد</button>
+</form>
+</div>
+
+</body>
+</html>   
       
 
