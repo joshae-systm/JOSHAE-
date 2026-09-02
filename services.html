@@ -33,7 +33,7 @@
             min-height: 100vh; 
         }
 
-        /* 🎯 كود ذكي لإجبار كل الحقول والصناديق على اتخاذ حدود رمادية واضحة وفخمة وكسر تحكم الآيباد */
+        /* 🎯 كود ذكي لإجبار كل الحقول والصناديق على اتخاذ حدود رمادية واضحة وفخمة وكسر تحكم الجوالات */
         input[type="text"], input[type="email"], select, textarea {
             border: 2px solid #cbd5e1 !important;
             border-radius: 8px !important;
@@ -41,8 +41,8 @@
             background-color: #ffffff !important;
             color: #1f2937 !important;
             outline: none !important;
-            -webkit-appearance: none !important; /* يكسر مظهر الآيباد ويجبر الحدود على الظهور */
-            appearance: none !important;         /* السطر المكمل له لجميع المتصفحات الافتراضية */
+            -webkit-appearance: none !important;
+            appearance: none !important;
         }
 
         .nav-bar {
@@ -82,7 +82,7 @@
         .features-list { list-style: none; margin-bottom: 1.5rem; flex-grow: 1; color: var(--text-muted); padding: 0; }
         .features-list li { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
 
-      .contact-section {
+        .contact-section {
             background: white; max-width: 600px; margin: 0 auto 4rem auto; padding: 2.5rem; border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border: 2px solid #e5e7eb;
         }
@@ -110,6 +110,7 @@
 
     <div class="container">
 
+        <!-- 1️⃣ قسم عن الوكالة والخدمات -->
         <h2 id="about-us" class="section-title">ماذا نقدم في JOSHAE؟</h2>
         <div class="services-grid">
             <div class="service-card">
@@ -129,27 +130,30 @@
             </div>
         </div>
 
+        <!-- 2️⃣ لوحة آراء العملاء -->
         <h2 class="section-title">آراء العملاء</h2>
         <div style="background: white; border: 2px dashed #cbd5e1; padding: 3rem 2rem; border-radius: 12px; text-align: center; max-width: 600px; margin: 0 auto 4rem auto; color: #4b5563; font-size: 1.1rem; font-weight: 600;">
             ✨ مرحباً بك في منصة JOSHAE! شاركنا طلبك أو استفسارك في النموذج بالأسفل، وتعرّف على باقاتنا المميزة لتنظيم الـ Google Drive! 👇
         </div>
 
+        <!-- 3️⃣ قسم التواصل وتقديم الطلبات الصافي 100% المربوط بالمعرّف المباشر -->
         <div id="contact-us" class="contact-section">
             <h2>شاركنا طلبك وتقييمك بالخدمة</h2>
-           <form action="https://formspree.io/f/mbgjnla" method="POST"onsubmit="event.preventDefault();fetch(this.action, { method: this.method, body: new FormData(this), headers: { 'Accept': 'application/json' } }).then(response => { if (response.ok) { alert('✨ تم استلام طلبك وتقييمك بنجاح في JOSHAE! سنتواصل معك قريباً.'); this.reset(); } else { alert('عذراً، حدث خطأ أثناء الإرسال. يرجى المحاولة مجدداً.'); } });">
-               
+            <form action="https://formspree.io" method="POST">
+                
                 <div class="form-group">
                     <label>الاسم الكريم</label>
                     <input type="text" name="name" placeholder="اكتب اسمك هنا" required>
                 </div>
-              <div class="form-group">
+                
+                <div class="form-group">
                     <label>بريدك الإلكتروني</label>
                     <input type="email" name="_replyto" placeholder="name@example.com" required>
                 </div>
                 
                 <div class="form-group">
-                    <label>اختر الباقة المطلوبة والطلب</label>
-                    <div class="radio-group">
+                    <label>اختر الباقة المطلوبة والطلب</label
+                                                          <div class="radio-group">
                         <label class="radio-option"><input type="radio" name="service_type" value="الباقة الأساسية (49 ريال)" required><span>الباقة الأساسية - 49 ريال (حتى 50 ملف)</span></label>
                         <label class="radio-option"><input type="radio" name="service_type" value="الباقة المتقدمة (99 ريال)"><span>الباقة المتقدمة - 99 ريال (حتى 150 ملف)</span></label>
                         <label class="radio-option"><input type="radio" name="service_type" value="باقة الأرشفة الدورية (199 ريال)"><span>باقة الأرشفة الدورية - 199 ريال (دورية شهرية)</span></label>
@@ -157,10 +161,9 @@
                     </div>
                 </div>
                 
-                <!-- ⭐ صندوق تقييم النجوم المطور باللون الذهبي البارق البارز -->
                 <div class="form-group">
                     <label>تقييمك للخدمة بالنجوم (اختياري)</label>
-                    <select name="rating" style="color:var(--warning)!important; font-weight: bold !important;">
+                    <select name="rating" style="color: var(--warning) !important; font-weight: bold !important;">
                         <option value="بدون تقييم" style="color: #4b5563;">اختر التقييم بالنجوم...</option>
                         <option value="5 نجوم">★★★★★ (ممتاز جداً)</option>
                         <option value="4 نجوم">★★★★☆ (جيد جدا)</option>
@@ -168,18 +171,22 @@
                     </select>
                 </div>
                 
-                <!-- 📝 مربع تفاصيل الطلب مقفل هندسياً بالكامل وبأقواس إغلاق متزنة مئة بالمئة -->
                 <div class="form-group">
-<!-- 5️⃣ خانة تفاصيل التعليق والرأي الحُر الزائدة -->
-<div class="form-group">
-<label>تفاصيل تعليقك ورأيك الحُر في خدمات JOSHAE</label>
-<textarea name="details" rows="5" placeholder="شاركنا تجربتك ورأيك الصادق أو تفاصيل طلبك هنا..." required></textarea>
-</div>
+                    <label>تفاصيل طلبك أو تعليقك ورأيك الحُر</label>
+                    <textarea name="details" rows="4" placeholder="اكتب تفاصيل طلبك أو شاركنا تجربتك ورأيك بـ JOSHAE هنا..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">إرسال الرد</button>
+            </form>
+        </div>
 
-<!-- 6️⃣ زر إرسال الرد الصريح والمطلوب -->
-<button type="submit" class="submit-btn">إرسال الرد</button>
-</form>
-</div>
+        <!-- 4️⃣ قسم باقات الأسعار -->
+        <h2 id="pricing" class="section-title">باقات وأسعار تنظيم الـ Google Drive</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="card-title">الباقة الأساسية</div>
+                <div class="price-tag">49 <span>ر.س</span></div>
+                </div>
 
 </body>
 </html>
